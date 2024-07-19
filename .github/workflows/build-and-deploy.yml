@@ -24,7 +24,7 @@ jobs:
             - name: Install dependencies
               run: | 
                 node --version
-                npm ci --production
+                npm install
             - name: Build Static Site
               run: npm run build
             - name: Copy files to production website with AWS CLI
