@@ -57,7 +57,11 @@ export const HTMLForm = ({
       setDataLoading(false);
     } catch (error) {
       console.error(error);
-      window.alert("Something went wrong");
+      window.alert(
+        `Unable to make request. Note that the API is currently being served over HTTP, 
+        and your browser may block the request this site is loaded over HTTPS. Make sure 
+        the site url begins with http://, and try again.`
+      );
       e.target.disabled = false;
       setDataLoading(false);
     }
