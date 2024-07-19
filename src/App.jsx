@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { ConvertedText } from "./components/ConvertedText";
 import { MarkdownForm } from "./components/MarkdownForm";
@@ -14,14 +14,6 @@ function App() {
   const [convertedText, setConvertedText] = useState("");
   const [dataLoading, setDataLoading] = useState(false);
   const [formDisplay, setFormDisplay] = useState("markdown");
-
-  useEffect(() => {
-    // Ensure site is loaded over http for successfull API requests
-    const currentUrl = window.location.href;
-    if (currentUrl.startsWith('https://')) {
-      window.location.href = currentUrl.replace('https://', 'http://');
-    }
-  }, []);
 
   // Handler for when the radio button selection changes
   const handleDisplayChange = (event) => {
